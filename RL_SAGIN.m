@@ -176,7 +176,7 @@ throughput_Leo= ones(1,iter);
 throughput_Haps= ones(1,iter);
 
 for i = 1:iter
-    % Select actions based on epsilon-greedy policy
+    % Select actions
     if rand() < 0.5 || i <=iter/4
         % Random action
         if mod(i,2)==0   %Power
@@ -250,7 +250,7 @@ for i = 1:iter
         s_Haps_power(i+1) = state_level;
     end
 
-    % throughput, and penalties
+    % Update Q-table
     if mod(i,2)==0
         for k=1:N_Leos  
             Q1_power{k}(a_leo(k), s_Leo_power(i)) = Q1_power{k}(a_leo(k), s_Leo_power(i)) + eta*(throughput_Leo(i) + gamma*max(Q1_power{k}(:, s_Leo_power(i+1))) - Q1_power{k}(a_leo(k), s_Leo_power(i)));
@@ -276,6 +276,7 @@ for i = 1:iter
     end
 end
 
+% Plot Leos information
 figure; 
 batch = (iter)/1000;
 TT = ones(1,(iter)/batch);
