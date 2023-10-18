@@ -9,17 +9,21 @@ To enhance the performance and reliability of the system.
 
 ## System Architecture
 The space-air-ground integrated network LEO (Low Earth Orbit) satellites, HAPs (High Altitude Platforms), Ground Users
-![image](https://github.com/Lewis-panda/Reinforcement-Learning_Project/assets/116704255/bc2f5178-6b00-4f67-a717-240c27a44447)
+![Architecture](https://github.com/Lewis-panda/Reinforcement-Learning_Project/assets/116704255/1fee80ba-0c03-44be-839a-b72f962ce18d)
+
 
 ## Methodology
 1. Q-learning based Resource Allocation
 2. Q-table is updated by the Bellman equation
 
-![Methodology](https://github.com/Lewis-panda/Reinforcement-Learning_Project/assets/116704255/e42c3cea-29bb-41b6-ac18-945fa66c4a31)
+![Methodology](https://github.com/Lewis-panda/Reinforcement-Learning_Project/assets/116704255/6dfdc60a-3141-4bff-9fe4-2ffcd50fe507)
 
 
 
 ## Experimental Results
-![ExperimentalResults](https://github.com/Lewis-panda/Reinforcement-Learning_Project/assets/116704255/c3cc36b0-f8d0-41bc-b776-6ab46462c150)
+![ExperimentalResults](https://github.com/Lewis-panda/Reinforcement-Learning_Project/assets/116704255/fc8e27de-fb8a-4a97-bb30-8dc94e9b228c)
+
+## Conclusion
+The experimental results demonstrate that the Q-Learning-trained Space-Air-Ground Integrated Network (SAGIN) enables the establishment of improved links and power connections, resulting in enhanced overall throughput
 
 
