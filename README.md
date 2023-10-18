@@ -14,6 +14,7 @@ The space-air-ground integrated network LEO (Low Earth Orbit) satellites, HAPs (
 ## Methodology
 1. Q-learning based Resource Allocation
 2. Q-table is updated by the Bellman equation
+
 ![Methodology](https://github.com/Lewis-panda/Reinforcement-Learning_Project/assets/116704255/e42c3cea-29bb-41b6-ac18-945fa66c4a31)
 
 
