@@ -8,7 +8,8 @@ Our project aims to optimize the association link and power selection in the Spa
 To enhance the performance and reliability of the system.
 
 ## System Architecture
-The space-air-ground integrated network LEO (Low Earth Orbit) satellites, HAPs (High Altitude Platforms), Ground Users
+The space-air-ground integrated network LEO (Low Earth Orbit) satellites, HAPs (High Altitude Platforms), Ground Users.
+
 ![Architecture](https://github.com/Lewis-panda/Reinforcement-Learning_Project/assets/116704255/1fee80ba-0c03-44be-839a-b72f962ce18d)
 
 
