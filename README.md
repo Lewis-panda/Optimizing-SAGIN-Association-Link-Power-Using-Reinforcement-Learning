@@ -2,7 +2,7 @@
 ### After downloading RL_SAGIN.m and reward_v2.m, you can execute them directly.
 ---
 ## Introduction
-Our project aims to optimize the association link and power selection in the Space-Air-Ground Integrated Network (SAGIN) system using Reinforcement Learning (RL) with Q-Learning.
+This project aims to optimize the association link and power selection in the Space-Air-Ground Integrated Network (SAGIN) system using Reinforcement Learning (RL) with Q-Learning.
 
 ## Goal
 To enhance the performance and reliability of the system.
