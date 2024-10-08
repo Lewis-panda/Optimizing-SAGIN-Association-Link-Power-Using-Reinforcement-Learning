@@ -1,4 +1,4 @@
-# Reinforcement_Learning_Project
+# Optimizing-SAGIN-Association-Link-Power-Using-Reinforcement-Learning
 ### After downloading RL_SAGIN.m and reward_v2.m, you can execute them directly.
 ---
 ## Introduction
