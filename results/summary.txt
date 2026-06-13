@@ -1,0 +1,8 @@
+method                 total sum-rate (bits/s/Hz)
+----------------------------------------------------
+Q-Learning              13.928  +/- 0.814
+Random                   5.095  +/- 0.145
+MaxPower+Greedy          7.081  +/- 0.426
+BestUniform+Greedy       7.119  +/- 0.409
+----------------------------------------------------
+Q-Learning gain over best baseline: +95.6%

@@ -1,0 +1,5 @@
+.venv/
+__pycache__/
+*.pyc
+# results/ is kept in-repo so the README figures render on GitHub.
+# Re-generate it any time with: python experiment.py

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="drawio" version="26.0.0">
+  <diagram name="SAGIN-methodology">
+    <mxGraphModel dx="900" dy="600" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="640" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <mxCell id="2" value="Q-learning training loop — independent multi-agent, tabular" style="text;html=1;align=center;verticalAlign=middle;fontSize=18;fontStyle=1;fontColor=#222222;" vertex="1" parent="1">
+          <mxGeometry x="60" y="16" width="1080" height="30" as="geometry" />
+        </mxCell>
+
+        <mxCell id="10" value="RL agents  (independent Q-learners)" style="swimlane;startSize=30;html=1;fillColor=#f5f7fb;strokeColor=#6c8ebf;fontStyle=1;fontSize=13;fontColor=#1a3c6e;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="70" y="100" width="420" height="320" as="geometry" />
+        </mxCell>
+        <mxCell id="11" value="Association agents&#xa;each HAPS picks a LEO · each GU picks a HAPS&#xa;state = current association" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#1a3c6e;fontSize=12;" vertex="1" parent="10">
+          <mxGeometry x="20" y="44" width="380" height="66" as="geometry" />
+        </mxCell>
+        <mxCell id="12" value="Power agents&#xa;each LEO / HAPS picks a transmit-power level&#xa;state = current power level" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontColor=#4b2e63;fontSize=12;" vertex="1" parent="10">
+          <mxGeometry x="20" y="124" width="380" height="66" as="geometry" />
+        </mxCell>
+        <mxCell id="13" value="Q-table update — Bellman&#xa;Q(s,a) ← Q(s,a) + α [ r + γ·maxₐ′ Q(s′,a′) − Q(s,a) ]" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontColor=#7a5c00;fontSize=12;fontStyle=0;" vertex="1" parent="10">
+          <mxGeometry x="20" y="210" width="380" height="80" as="geometry" />
+        </mxCell>
+
+        <mxCell id="20" value="SAGIN environment" style="swimlane;startSize=30;html=1;fillColor=#f7faf6;strokeColor=#82b366;fontStyle=1;fontSize=13;fontColor=#2f5d2f;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="720" y="100" width="420" height="320" as="geometry" />
+        </mxCell>
+        <mxCell id="21" value="Channel model&#xa;gain = −FSPL + antenna gain,  Rayleigh fading (resampled each step)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#999999;fontColor=#333333;fontSize=12;" vertex="1" parent="20">
+          <mxGeometry x="20" y="42" width="380" height="56" as="geometry" />
+        </mxCell>
+        <mxCell id="22" value="SINR with co-channel interference&#xa;SINRⱼ = Pₐ·gₐⱼ / ( Σₘ≠ₐ Pₘ·gₘⱼ + N₀ )" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontColor=#2f5d2f;fontSize=12;" vertex="1" parent="20">
+          <mxGeometry x="20" y="110" width="380" height="58" as="geometry" />
+        </mxCell>
+        <mxCell id="23" value="Intra-cell equal load sharing&#xa;rateⱼ = (1 / load) · log₂(1 + SINRⱼ)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontColor=#7a5300;fontSize=12;" vertex="1" parent="20">
+          <mxGeometry x="20" y="180" width="380" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="24" value="Per-tier sum-rate  (bits/s/Hz)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontColor=#2f5d2f;fontSize=12;fontStyle=1;" vertex="1" parent="20">
+          <mxGeometry x="20" y="242" width="380" height="46" as="geometry" />
+        </mxCell>
+
+        <mxCell id="31" value="" style="endArrow=classic;html=1;rounded=1;strokeColor=#999999;strokeWidth=1.5;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="20" source="21" target="22">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="32" value="" style="endArrow=classic;html=1;rounded=1;strokeColor=#999999;strokeWidth=1.5;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="20" source="22" target="23">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="33" value="" style="endArrow=classic;html=1;rounded=1;strokeColor=#999999;strokeWidth=1.5;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="20" source="23" target="24">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="40" value="actions:  association  +  power level         ( ε-greedy,  ε decaying )" style="endArrow=classic;html=1;rounded=1;strokeColor=#1f6fbf;strokeWidth=3;fontColor=#1f6fbf;fontSize=12;fontStyle=1;exitX=1;exitY=0.18;exitDx=0;exitDy=0;entryX=0;entryY=0.18;entryDx=0;entryDy=0;" edge="1" parent="1" source="10" target="20">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="41" value="reward  r   +   next state  s′ ( = chosen action )" style="endArrow=classic;html=1;rounded=1;strokeColor=#82b366;strokeWidth=3;fontColor=#2f5d2f;fontSize=12;fontStyle=1;exitX=0;exitY=0.82;exitDx=0;exitDy=0;entryX=1;entryY=0.82;entryDx=0;entryDy=0;" edge="1" parent="1" source="20" target="10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="50" value="Credit assignment" style="swimlane;startSize=26;html=1;fillColor=#fffdf5;strokeColor=#d6b656;dashed=1;fontStyle=1;fontSize=12;fontColor=#7a5c00;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="330" y="470" width="560" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="51" value="• Association agents ← local reward = own link rate rⱼ&#xa;&#xa;• Power agents ← global reward = per-tier sum-rate&#xa;   (so a transmitter feels the interference it inflicts on others — max power is not optimal)" style="text;html=1;align=left;verticalAlign=top;fontSize=12;fontColor=#5c4500;spacingLeft=6;" vertex="1" parent="50">
+          <mxGeometry x="12" y="32" width="536" height="80" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
